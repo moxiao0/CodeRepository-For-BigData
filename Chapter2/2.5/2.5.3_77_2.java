@@ -1,0 +1,1 @@
+def take(num: Int): Array[T]

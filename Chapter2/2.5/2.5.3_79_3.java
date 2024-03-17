@@ -1,0 +1,1 @@
+def fold(zeroValue: T)(op: (T, T) => T): T

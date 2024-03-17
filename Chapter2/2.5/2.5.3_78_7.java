@@ -1,0 +1,1 @@
+def reduce ( f : ( T, T ) => T ) : T

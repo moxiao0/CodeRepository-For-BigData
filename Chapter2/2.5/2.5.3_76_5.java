@@ -1,0 +1,1 @@
+def collect(): Array[T]
