@@ -1,0 +1,1 @@
+hive (default)> select deptno, avg(sal) avg_sal from emp group by deptno having avg_sal > 2000;

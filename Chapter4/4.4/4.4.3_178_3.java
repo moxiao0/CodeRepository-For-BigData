@@ -1,0 +1,8 @@
+scala> val jdbcDF = spark.read.format("jdbc")
+    .option("url", "jdbc:mysql://localhost:3306/spark")
+    .option("driver", "com.mysql.jdbc.Driver")
+    .option("dbtable", "student")
+    .option("user", "root")
+    .option("password", "hadoop")
+    .load()
+scala> jdbcDF.show()

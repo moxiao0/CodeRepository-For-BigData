@@ -1,0 +1,4 @@
+StreamExecutionEnvironment env = StreamExecutionEnvironment.
+getExecutionEnvironment();
+//使用StreamExecutionEnvironment创建StreamTableEnvironment
+StreamTableEnvironment tableEnvironment = StreamTableEnvironment.create(env);

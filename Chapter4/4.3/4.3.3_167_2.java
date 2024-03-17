@@ -1,0 +1,1 @@
+hive (default)> select empno, dname from emp, dept;
