@@ -1,0 +1,1 @@
+DataStreamSource<String> userDataStream = env.readTextFile( filePath:"FILE_PATH");
