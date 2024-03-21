@@ -1,2 +1,2 @@
-val rddDatasc = sc.objectFile[Person](path)
+val rddData = sc.objectFile[Person](path)
 println(rddData.collect.toList)
