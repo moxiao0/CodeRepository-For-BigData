@@ -1,13 +1,13 @@
 public class WordCount {
- 
-  public static class Tokenizer Mapper 
-       extends  Mapper<Object, Text, Text, IntWritable>{
+  
+  public static class TokenizerMapper
+       extends Mapper<Object, Text, Text, IntWritable>{
      
     private final static IntWritable one = new IntWritable(1);
     private Text word = new Text();
     // 参数key与value是输入的键值对，参数context可以记录输入的key和value 
     // 参数context还会记录Map运算的状态
-    public void  Map(Object key, Text value, Context context
+    public void map(Object key, Text value, Context context // 修改了方法名Map为小写map
                     ) throws IOException, InterruptedException {
       // 将输入的value进行分词，放入变量itr
       StringTokenizer itr = new StringTokenizer(value.toString());
@@ -19,12 +19,13 @@ public class WordCount {
     }
   }
    
-  public static class IntSumReducer 
+ public static class IntSumReducer 
        extends Reducer<Text,IntWritable,Text,IntWritable> {
     private IntWritable result = new IntWritable();
+ 
     // 参数value类似Map函数，不过value是一个迭代器的形式，一个key对应一组的value
     // Reduce也有context，和Map的context作用一样
-    public void Reduce(Text key, Iterable<IntWritable> values,Context context
+    public void reduce(Text key, Iterable<IntWritable> values, Context context
                        ) throws IOException, InterruptedException {
       // 利用循环语句统计value中各个词语的数量，并存放到result中，通过context写入最终结果
       int sum = 0;
@@ -49,7 +50,7 @@ public class WordCount {
     Job job = new Job(conf, "word count");
     // 加载所需的各个类
     job.setJarByClass(WordCount.class);
-    job.set MapperClass(Tokenizer Mapper.class);
+    job.setMapperClass(TokenizerMapper.class);
     job.setCombinerClass(IntSumReducer.class);
     job.setReducerClass(IntSumReducer.class);
     // 定义输出的key和value的类型
