@@ -5,7 +5,7 @@ DataSource<Sales> salesDataSource = env.readCsvFile(path).ignoreFirstLine()
 //将DataSource转换成Table
 Table table = tableEnvironment.fromDataSet(salesDataSource);
 salesDataSource.print();
-System.out.println("===========================")
+System.out.println("===========================");
 Table resultTable = table.groupBy("customerId").select("customerId,sum
 (amountPaid)");
 DataSet<Row> result = tableEnvironment.toDataSet(resultTable,Row.class);

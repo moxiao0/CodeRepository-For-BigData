@@ -5,7 +5,7 @@ object FlinkTableSqlExample {
     val tableEnv = StreamTableEnvironment.create(env)
 
     //创建一个示例数据流
-    val inputSteam: DataStream[(Long, String, Int)] = env.fromElements(
+    val inputStream: DataStream[(Long, String, Int)] = env.fromElements(
       (1L, "temperature", 30),
       (2L, "humidity", 70),
       (3L, "temperature", 35)
