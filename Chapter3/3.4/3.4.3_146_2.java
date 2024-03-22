@@ -3,7 +3,7 @@ DataStream<String> streamOperator = connect.map(new CoMapFunction<String, Intege
         return s + "是字符串类型，直接加扩展名";
     }
 
-    public String map2(Integer integer) throws Exception {
+    public String map2(Integer Integer) throws Exception {
         return "原本是Int类型:" + integer + "现在也变为String";
     }
 });
