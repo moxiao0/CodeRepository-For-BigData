@@ -12,7 +12,7 @@ object FlinkTableSqlExample {
     )
 
     //将DataStream转换成Table
-    val sensorTable = tableEnv.fromDataStream(inputSteam, $"id", $"type", $"var1")
+    val sensorTable = tableEnv.fromDataStream(inputStream, $"id", $"type", $"var1")
 
     //直接在SqlQuery方法中使用$符号引用Table对象
     val resultTable = tableEnv.sqlQuery(s"SELECT type, SUM(var1) FROM $sensorTable WHERE type = 'temperature' GROUP BY type")

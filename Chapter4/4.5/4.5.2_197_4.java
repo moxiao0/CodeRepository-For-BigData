@@ -1,0 +1,1 @@
+SELECT id, tag FROM Sensors, LATERAL TABLE(my_udtf(type)) AS t (tag)

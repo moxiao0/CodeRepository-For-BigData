@@ -6,7 +6,7 @@ val fieldTypes: Array[TypeInformation[_]] = Array(Types.LONG,
 Types.STRING)
 //通过registerTableSink将CsvTableSink注册成Table
 tableEnv.registerTableSink("csv_output_table", fieldNames,
-fieldTypes, csvSink)
+fieldTypes, csvTableSink)
 //通过sqlUpdate()方法，将类型为温度的数据筛选出来并输出到外部表中
 tableEnv.sqlUpdate(
 "INSERT INTO csv_output_table SELECT id, type FROM Sensors WHERE

@@ -4,9 +4,8 @@ scala> import org.apache.spark.sql.Row
 
 //创建模式(Schema),模式中包含name和age两个字段
 //schema就是"表头"
-scala> val fields = Array(StructField("name",StringType,true),StructField("age",
-IntegerType,true))
-    scala> val schema = StructType(fields)
+scala> val fields = Array(StructField("name",StringType,true),StructField("age",IntegerType,true))
+scala> val schema = StructType(fields)
  
 //下面加载文件生成RDD
 scala> val peopleRDD = spark.sparkContext.textFile("file:///usr/local/spark/

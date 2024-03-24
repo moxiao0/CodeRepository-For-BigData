@@ -1,12 +1,8 @@
 scala> import org.apache.spark.sql.catalyst.encoders.ExpressionEncoder
-     import org.apache.spark.sql.catalyst.encoders.ExpressionEncoder
 scala> import org.apache.spark.sql.Encoder
-     import org.apache.spark.sql.Encoder
-scala> import spark.implicits 
+scala> import spark.implicits._  
   //导入包，支持把一个RDD隐式转换为一个DataFrame, 下面是系统执行返回的信息
-import spark.implicits._ 
-
-scala> case class class Person (name: String, age: Long)    
+scala> case class Person (name: String, age: Long)    
 //定义一个case class 
 defined class Person
 val peopleDF = spark.sparkContext
